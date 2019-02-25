@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-info mb-3">
     <div class="container">
-        <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="{{ route('home') }}">
             @include('layouts._logo')
             {{ config('app.name') }}
         </a>
@@ -14,8 +14,8 @@
                 </li>
             </ul>
             <ul class="navbar-nav justify-content-end">
-                <li class="nav-item"><a href="/help" class="nav-link">帮助</a></li>
-                <li class="nav-item"><a href="/about" class="nav-link">关于</a></li>
+                <li class="nav-item"><a href="/login" class="nav-link">登 陆</a></li>
+                <li class="nav-item"><a href="/register" class="nav-link">注 册</a></li>
             </ul>
         </div>
     </div>

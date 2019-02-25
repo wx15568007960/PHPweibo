@@ -11,9 +11,6 @@
     @include('layouts._header')
 
     <div class="container">
-        @guest
-            @include('partials._invite_to_join')
-        @endguest
         @yield('content')
     </div>
 
