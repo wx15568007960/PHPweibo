@@ -10,12 +10,12 @@
         <div class="collapse navbar-collapse" id="navbar-main">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">广场</a>
+                    <a class="nav-link" href="{{ route('home') }}">广场</a>
                 </li>
             </ul>
             
             <a class="btn btn-sm btn-outline-warning mr-2" href="/login">登 陆</a>
-            <a class="btn btn-sm btn-outline-light" href="/register">注 册</a>
+            <a class="btn btn-sm btn-outline-light" href="{{ route('signup') }}">注 册</a>
         </div>
     </div>
 </nav>
