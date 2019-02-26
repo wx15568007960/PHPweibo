@@ -11,6 +11,11 @@
     @include('layouts._header')
 
     <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                @include('shared._messages')
+            </div>
+        </div>
         @yield('content')
     </div>
 
