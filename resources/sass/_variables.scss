@@ -1,6 +1,7 @@
 
 // Body
-$body-bg: #f8fafc;
+$body-bg: #f6f9fc;
+$front-bg: #ffffff;
 
 // Typography
 $font-family-sans-serif: "Nunito", sans-serif;
@@ -18,3 +19,12 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+$primary:       #2879d9 !default;
+$secondary:     #d7d7d7 !default;
+$success:       #4cd964 !default;
+$info:          #5ac8fa !default;
+$warning:       #ff9500 !default;
+$danger:        #ff3b30 !default;
+$light:         #f0f0f0 !default;
+$dark:          #4a4a4a !default;

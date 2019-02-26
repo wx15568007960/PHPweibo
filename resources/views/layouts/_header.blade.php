@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-info mb-3">
+<nav class="navbar navbar-expand-md navbar-dark bg-info mb-3 shadow-sm">
     <div class="container">
     <a class="navbar-brand" href="{{ route('home') }}">
             @include('layouts._logo')
@@ -14,7 +14,7 @@
                 </li>
             </ul>
             
-            <a class="btn btn-sm btn-outline-warning mr-2" href="/login">登 陆</a>
+            <a class="btn btn-sm btn-outline-primary mr-2" href="/login">登 陆</a>
             <a class="btn btn-sm btn-outline-light" href="{{ route('signup') }}">注 册</a>
         </div>
     </div>

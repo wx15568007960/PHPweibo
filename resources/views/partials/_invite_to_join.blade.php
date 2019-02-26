@@ -7,6 +7,6 @@
     <p>
         期待你的加入 ！
     </p>
-    <a class="btn btn-success rounded-pill mr-2" href="{{ route('signup') }}">立即加入</a>
+    <a class="btn btn-success rounded-pill text-white mr-2" href="{{ route('signup') }}">立即加入</a>
     <a class="btn btn-light rounded-pill" href="{{ route('about') }}">了解更多</a>
 </div>
