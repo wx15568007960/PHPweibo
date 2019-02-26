@@ -4,9 +4,9 @@
 
 @section('content')
     <div class="offset-md-2 col-md-8">
-        <div class="card">
-            <div class="card-header">
-                <h5>注册</h5>
+        <div class="card border-0 shadow">
+            <div class="card-header bg-primary">
+                <h5 class="mb-0 text-white">注册</h5>
             </div>
             <div class="card-body">
 
