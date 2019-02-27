@@ -10658,6 +10658,7 @@ a.text-dark:focus {
 body {
   font-size: 14px;
   font-weight: normal;
+  min-height: 100%;
 }
 
 .body-bg {
@@ -10666,5 +10667,9 @@ body {
 
 .front-bg {
   background-color: #ffffff;
+}
+
+.m-h-100 {
+  min-height: 100%;
 }
 
