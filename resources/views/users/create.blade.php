@@ -33,6 +33,10 @@
 
                     <button class="btn btn-success btn-block" type="submit">注册</button>
                 </form>
+
+                <hr>
+
+                <p class="text-right mb-0">已有账号？<a href="{{ route('login') }}">去登陆</a></p>
             </div>
         </div>
     </div>

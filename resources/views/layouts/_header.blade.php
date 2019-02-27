@@ -14,7 +14,7 @@
                 </li>
             </ul>
             
-            <a class="btn btn-sm btn-outline-primary mr-2" href="/login">登 陆</a>
+            <a class="btn btn-sm btn-outline-primary mr-2" href="{{ route('login') }}">登 陆</a>
             <a class="btn btn-sm btn-outline-light" href="{{ route('signup') }}">注 册</a>
         </div>
     </div>
