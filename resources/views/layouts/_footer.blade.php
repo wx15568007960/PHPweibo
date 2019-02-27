@@ -1,4 +1,4 @@
-<footer class="footer fixed-bottom bg-white py-4">
+<footer class="footer bg-white py-4 mt-3">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 d-flex justify-content-center">
