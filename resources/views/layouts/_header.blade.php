@@ -4,7 +4,7 @@
             @include('layouts._logo')
             {{ config('app.name') }}
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbar-main" aria-controls="navbar-main" aria-expanded="false">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main" aria-controls="navbar-main" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar-main">
