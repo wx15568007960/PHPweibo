@@ -8,9 +8,11 @@
         @include('shared._form_errors')
 
         <div class="text-center mb-3">
-            <a href="http://gravatar.com/emails" target="_blank" title="前往 gravatar 更换头像">
-                <img src="{{ $user->avatar() }}" alt="{{ $user->name }}">
-            </a>
+            <img class="mb-2" src="{{ $user->avatar() }}" alt="{{ $user->name }}" width="120px">
+            <form action="{{ route('users.fresh-avatar', $user) }}" method="POST">
+                {{ csrf_field() }}
+                <button class="btn btn-sm btn-outline-primary" type="submit">更换头像</button>
+            </form>
         </div>
 
         <form action="{{ route('users.update', $user->id) }}" method="post">

@@ -12,12 +12,19 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'except' => ['show', 'create', 'store'],
+            'except' => ['show', 'create', 'store', 'index'],
         ]);
 
         $this->middleware('guest', [
             'only' => ['create'],
         ]);
+    }
+
+    public function index()
+    {
+        $users = User::paginate(12);
+
+        return view('users.index', compact('users'));
     }
 
     public function create()
@@ -42,6 +49,7 @@ class UsersController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
+            'avatar' => make_avatar($request->email),
         ]);
 
         Auth::login($user);
@@ -78,4 +86,14 @@ class UsersController extends Controller
         return redirect()->route('users.show', $user->id);
     }
 
+    public function freshAvatar(User $user)
+    {
+        $this->authorize('update', $user);
+
+        $user->makeAvatar();
+
+        session()->flash('success', '头像换新成功！');
+
+        return redirect()->route('users.show', $user->id);
+    }
 }

@@ -13,7 +13,7 @@
                     <a class="nav-link" href="{{ route('home') }}">广场</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">人脉</a>
+                    <a class="nav-link" href="{{ route('users.index') }}">人脉</a>
                 </li>
             </ul>
             @if (Auth::check())

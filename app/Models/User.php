@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'avatar'
     ];
 
     /**
@@ -28,10 +29,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function avatar($size = 100)
+    public function avatar()
     {
-        $hash = md5(strtolower(trim($this->attributes['email'])));
+        if (!$this->avatar) {
+            $this->makeAvatar();
+        }
+        
+        return $this->avatar;
+    }
 
-        return "http://www.gravatar.com/avatar/$hash?s=$size";
+    public function makeAvatar()
+    {
+        $this->avatar = make_avatar($this->email);
+        $this->save();
+
+        return $this->avatar;
     }
 }
