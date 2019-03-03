@@ -22,3 +22,5 @@ Route::post('/{user}/fresh-avatar', 'UsersController@freshAvatar')->name('users.
 Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store');
 Route::delete('/logout', 'SessionsController@destroy')->name('logout');
+
+Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
