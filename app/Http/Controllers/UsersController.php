@@ -111,13 +111,11 @@ class UsersController extends Controller
 
     public function sendEmailConfirmationTo(User $user)
     {
-        $from = 'chuoke@qq.com';
-        $name = 'Chuoke';
         $to = $user->email;
         $subject = '确认邮箱';
 
-        Mail::send('emails.confirm', compact('user'), function ($message) use($from, $name, $to, $subject) {
-            $message->from($from, $name)->to($to)->subject($subject);
+        Mail::send('emails.confirm', compact('user'), function ($message) use($to, $subject) {
+            $message->to($to)->subject($subject);
         });
     }
 
