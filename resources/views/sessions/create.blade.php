@@ -26,6 +26,8 @@
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" name="remember" id="remember">
                         <label class="form-check-label" for="remember">记住我</label>
+                        
+                        <a class="float-right" href="{{ route('password.request') }}">忘记密码？</a>
                     </div>
 
                     <button  class="btn btn-success btn-block" type="submit">登 陆</button>
