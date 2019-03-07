@@ -28,7 +28,7 @@ class SessionsController extends Controller
         ]);
 
         if (Auth::attempt($credentials, $request->has('remember'))) {
-            if (!Atuh::user()->activated) {
+            if (!Auth::user()->activated) {
                 Auth::logout();
 
                 session()->flash('warning', '您的账号未激活，请查收您的注册邮箱并按指示进行激活。');

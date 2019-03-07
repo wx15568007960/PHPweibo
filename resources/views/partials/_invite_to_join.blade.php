@@ -1,4 +1,4 @@
-<div class="jumbotron bg-white shadow-sm">
+<div class="jumbotron bg-transparent">
     <h1>Hello，There You Are !</h1>
     <p class="lead">
         翻迎来到 <a href=""><span class="h2">{{ config('app.name') }}</span></a> !

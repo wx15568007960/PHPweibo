@@ -10661,6 +10661,10 @@ body {
   min-height: 100%;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .body-bg {
   background-color: #f6f9fc;
 }

@@ -28,9 +28,11 @@
                     </div>
                 @endforelse
         
-                <div class="col-sm-12 mt-3">
-                    {!! $statuses->render() !!}
-                </div>
+                @auth
+                    <div class="col-sm-12 mt-4">
+                        {!! $statuses->render() !!}
+                    </div>
+                @endauth
             </div>
         </div>
     </div>

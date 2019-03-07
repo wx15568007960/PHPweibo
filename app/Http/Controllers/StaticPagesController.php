@@ -9,7 +9,7 @@ class StaticPagesController extends Controller
 {
     public function home()
     {
-        $statuses = Status::orderBy('created_at', 'desc')
+        $statuses = Status::with('user')->orderBy('created_at', 'desc')
                             ->paginate(10);
 
         return view('static_pages/home', compact('statuses'));

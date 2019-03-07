@@ -65,4 +65,10 @@ class User extends Authenticatable
         return $this->statuses()
                     ->orderBy('created_at', 'desc');
     }
+
+    public function updateStatusCount()
+    {
+        $this->status_count = $this->statuses()->count();
+        $this->save();
+    }
 }
