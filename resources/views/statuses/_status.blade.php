@@ -12,5 +12,15 @@
         <p class="card-text mt-3">
             {{ $status->content }}
         </p>
+
+        @can('destroy', $status)
+            <form action="{{ route('statuses.destroy', $status->id) }}" method="POST" onsubmit="return confirm('确定要删除本条微博吗？');">
+                {{ csrf_field() }}
+
+                @method('DELETE')
+
+                <button type="submit" class="btn btn-sm btn-light py-0 px-2 float-right" title="删除">🗑</button>
+            </form>
+        @endcan
     </div>
 </div>
