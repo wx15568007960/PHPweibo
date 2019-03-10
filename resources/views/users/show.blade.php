@@ -11,6 +11,9 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-sm-12 d-flex justify-content-center">
+            @include('shared._stats', ['user' => $user])
+        </div>
         <div class="col-sm-12">
             <hr>
         </div>
