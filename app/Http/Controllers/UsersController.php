@@ -13,7 +13,7 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'except' => ['show', 'create', 'store', 'index', 'confirmEmail'],
+            'except' => ['show', 'create', 'store', 'index', 'confirmEmail', 'followers', 'followings'],
         ]);
 
         $this->middleware('guest', [
@@ -137,5 +137,23 @@ class UsersController extends Controller
         session()->flash('success', '恭喜你，账户激活成功，您将开启一段新的旅程~');
 
         return redirect()->route('users.show', [$user]);
+    }
+
+    public function followers(User $user)
+    {
+        $users = $user->followers()->paginate(24);
+
+        $title = ($user->id == Auth::user()->id ? '我' : $user->name) . '的粉丝';
+
+        return view('users.show_follow', compact('users', 'user', 'title'));
+    }
+
+    public function followings(User $user)
+    {
+        $users = $user->followings()->paginate(24);
+
+        $title = ($user->id == Auth::user()->id ? '我' : $user->name ) . '关注的人';
+
+        return view('users.show_follow', compact('users', 'user', 'title'));
     }
 }
