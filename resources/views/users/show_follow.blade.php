@@ -13,7 +13,7 @@
                         <form action="{{ route('users.destroy', $follow->id) }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <button class="btn btn-sm btn-danger" type="submit">删 除</button>
+                            <button class="btn btn-sm btn-danger mt-3" type="submit">删 除</button>
                         </form>
                     @endcan
                 </div>

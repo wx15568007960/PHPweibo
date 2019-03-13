@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12 d-flex justify-content-center">
+        <div class="col-sm-12 d-flex justify-content-center mt-3">
             @include('shared._stats', ['user' => $user])
         </div>
         <div class="col-sm-12">

@@ -143,7 +143,7 @@ class UsersController extends Controller
     {
         $users = $user->followers()->paginate(24);
 
-        $title = ($user->id == Auth::user()->id ? '我' : $user->name) . '的粉丝';
+        $title = (Auth::check() && $user->id == Auth::user()->id ? '我' : $user->name) . '的粉丝';
 
         return view('users.show_follow', compact('users', 'user', 'title'));
     }
@@ -152,7 +152,7 @@ class UsersController extends Controller
     {
         $users = $user->followings()->paginate(24);
 
-        $title = ($user->id == Auth::user()->id ? '我' : $user->name ) . '关注的人';
+        $title = (Auth::check() && $user->id == Auth::user()->id ? '我' : $user->name ) . '关注的人';
 
         return view('users.show_follow', compact('users', 'user', 'title'));
     }
