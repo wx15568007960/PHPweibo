@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbar-main">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">广场</a>
+                    <a class="nav-link" href="{{ Auth::check() ? route('all') : route('home') }}">广场</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('users.index') }}">人脉</a>

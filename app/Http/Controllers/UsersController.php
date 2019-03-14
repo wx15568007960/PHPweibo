@@ -23,7 +23,7 @@ class UsersController extends Controller
 
     public function index()
     {
-        $users = User::paginate(12);
+        $users = User::paginate($this->pagesize(24, 12));
 
         return view('users.index', compact('users'));
     }
@@ -37,7 +37,7 @@ class UsersController extends Controller
     {
         $statuses = $user->statuses()
                         ->orderBy('created_at', 'desc')
-                        ->paginate(10);
+                        ->paginate($this->pagesize());
 
         return view('users.show', compact('user', 'statuses'));
     }
@@ -141,7 +141,7 @@ class UsersController extends Controller
 
     public function followers(User $user)
     {
-        $users = $user->followers()->paginate(24);
+        $users = $user->followers()->paginate($this->pagesize(24, 12));
 
         $title = (Auth::check() && $user->id == Auth::user()->id ? '我' : $user->name) . '的粉丝';
 
@@ -150,7 +150,7 @@ class UsersController extends Controller
 
     public function followings(User $user)
     {
-        $users = $user->followings()->paginate(24);
+        $users = $user->followings()->paginate($this->pagesize(24, 12));
 
         $title = (Auth::check() && $user->id == Auth::user()->id ? '我' : $user->name ) . '关注的人';
 

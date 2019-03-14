@@ -33,6 +33,6 @@ class FollowersController extends Controller
             Auth::user()->unfollow($user->id);
         }
 
-        return redirect()->intended(route('users.show', $user->id));
+        return redirect()->back();
     }
 }
