@@ -29,11 +29,15 @@ class StaticPagesController extends Controller
 
     public function help()
     {
-        return view('static_pages/help');
+        $content = parse_markdown('sites/help');
+
+        return view('static_pages/help', compact('content'));
     }
 
     public function about()
     {
-        return view('static_pages/about');
+        $content = parse_markdown('sites/about');
+
+        return view('static_pages/about', compact('content'));
     }
 }

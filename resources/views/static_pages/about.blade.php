@@ -3,5 +3,9 @@
 @section('title', '关于')
 
 @section('content')
-    <h1>关于</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            {!! $content !!}
+        </div>
+    </div>
 @endsection

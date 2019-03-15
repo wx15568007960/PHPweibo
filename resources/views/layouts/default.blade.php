@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,8 @@
     <title>@yield('title', '') @yield('title-gap', '-') {{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
-<body>
+<body class="d-flex flex-column h-100">
     @include('layouts._header')
-
-    @yield('top-content')
     
     <div class="container">
         <div class="row">
@@ -18,6 +16,11 @@
                 @include('shared._messages')
             </div>
         </div>
+    </div>
+
+    @yield('top-content')
+    
+    <div class="container mb-5">
         @yield('content')
     </div>
 

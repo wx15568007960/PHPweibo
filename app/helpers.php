@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
+
 
 function get_db_config()
 {
@@ -48,4 +50,24 @@ function make_avatar($gen_str, $size = 100)
     }
 
     return $host . $subfix;
+}
+function parse_markdown($markdown)
+{
+    $cache = md5($markdown);
+    if (Cache::has($cache)) {
+        return Cache::get($cache);
+    }
+
+    $file = base_path('resources/views/markdows/'. $markdown . '.md');
+    
+    if (!file_exists($file)) {
+        return '';
+    }
+    $paser = app(Parsedown::class);
+
+    $content = $paser->text(file_get_contents($file));
+
+    Cache::store('file')->add($cache, $content, 30);
+
+    return Cache::get($cache);
 }
